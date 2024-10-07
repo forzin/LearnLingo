@@ -1,0 +1,11 @@
+.listItem {
+    border: 1px solid #bebebe;
+    border-radius: 7px;
+    padding: 15px;
+    width: 300px;
+    margin-bottom: 25px;
+}
+
+.contactsInfo {
+    margin-bottom: 10px;
+}
