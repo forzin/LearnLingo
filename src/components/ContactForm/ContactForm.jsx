@@ -1,7 +1,11 @@
 import {Formik, Form, Field, ErrorMessage} from 'formik';
 import styles from './ContactForm.module.css';
 
+
 import * as Yup from 'yup';
+import { addContact } from '../../redux/contactsSlice';
+import { useDispatch } from 'react-redux';
+import { nanoid } from 'nanoid';
 
 const initialValues = {
     name: '',
@@ -16,10 +20,18 @@ const profileFormFilter = Yup.object({
     phone: Yup.string().required('Phone is required').matches(phoneRegex, 'Invalid phone number!'),
 })
 
-const ContactForm = ({ onAddContact }) => {
+const ContactForm = () => {
+
+    const dispatch = useDispatch();
 
     const handleSubmit = values => {
-        onAddContact(values);
+        const addNewContact = {
+            ...values,
+            id: nanoid()
+        }
+      
+        const action = addContact(addNewContact);
+        dispatch(action);
     }
 
     return (
