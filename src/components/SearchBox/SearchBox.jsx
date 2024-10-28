@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { changeFilter } from "../../redux/filterSlice";
 
-const SeacrhBox = ({ value }) => {
+const SeacrhBox = () => {
 
     const dispatch = useDispatch();
 
@@ -11,7 +11,7 @@ const SeacrhBox = ({ value }) => {
             <input onChange={(event) => {
                 const action = changeFilter(event.target.value);
                 dispatch(action); 
-            }} value={value} type="text" placeholder="Elli"/>
+            }} type="text" placeholder="Elli"/>
         </div>
     );
 }
