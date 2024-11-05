@@ -5,14 +5,11 @@ import ContactList from './components/ContactList/ContactList';
 import './App.css'
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchContacts } from './redux/contact/contactsOps';
+import { fetchContacts } from './redux/contactsOps';
 
 function App() {
 
   const dispatch = useDispatch();
-  
-  //const isLoading = useSelector((state) => state.contactBook.isLoading);
-  //const error = useSelector((state) => state.contactBook.error);
 
   useEffect(() => {
     dispatch(fetchContacts());

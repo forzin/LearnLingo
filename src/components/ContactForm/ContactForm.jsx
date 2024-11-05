@@ -6,7 +6,7 @@ import * as Yup from 'yup';
 //import { addContact } from '../../redux/contactsSlice';
 import { useDispatch } from 'react-redux';
 import { nanoid } from 'nanoid';
-import { addContact } from '../../redux/contact/contactsOps';
+import { addContact } from '../../redux/contactsOps';
 
 const initialValues = {
     name: '',
