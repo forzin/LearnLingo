@@ -3,9 +3,10 @@ import styles from './ContactForm.module.css';
 
 
 import * as Yup from 'yup';
-import { addContact } from '../../redux/contactsSlice';
+//import { addContact } from '../../redux/contactsSlice';
 import { useDispatch } from 'react-redux';
 import { nanoid } from 'nanoid';
+import { addContact } from '../../redux/contact/contactsOps';
 
 const initialValues = {
     name: '',
