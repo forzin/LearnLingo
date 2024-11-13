@@ -6,7 +6,7 @@ const Contact = React.lazy(() => import('../Contact/Contact'));
 import styles from './ContactList.module.css';
 import { selectContacts, selectContactsIsLoading, selectFilteredContacts } from '../../redux/contacts/contactsSlice';
 
-import { fetchContacts } from '../../redux/contacts/contactsOps';
+import { fetchContacts } from '../../redux/contacts/operations';
 
 
 const ContactList = () => {

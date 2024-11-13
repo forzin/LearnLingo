@@ -1,7 +1,7 @@
 import './App.css'
 import { useDispatch, useSelector } from 'react-redux';
 import React, { Suspense, useEffect } from 'react';
-import { fetchContacts } from './redux/contacts/contactsOps';
+import { fetchContacts } from './redux/contacts/operations';
 import { refreshUser } from './redux/auth/operations';
 import { selectUserDataIsRefreshing } from './redux/auth/authSlice';
 import { Toaster } from 'react-hot-toast';
