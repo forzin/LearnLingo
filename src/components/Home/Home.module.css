@@ -1,0 +1,23 @@
+.containerHero {
+    background-color: rgb(185, 172, 115);
+    padding-top: 470px;
+    padding-bottom: 355px;
+    
+    width: 100%;
+
+    background-image: url('../../img//gIkuu.png');
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center bottom;
+}
+
+.titleHero {
+    color: rgb(201, 187, 125);
+    font-size: 80px;
+}
+
+.textHero {
+    color: rgb(51, 51, 51);
+    font-size: 20px;
+}

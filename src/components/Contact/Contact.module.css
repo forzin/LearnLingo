@@ -1,5 +1,5 @@
 .listItem {
-    border: 1px solid #bebebe;
+    border: 2px solid #b9ac6e;
     border-radius: 7px;
     padding: 15px;
     width: 300px;
@@ -8,4 +8,13 @@
 
 .contactsInfo {
     margin-bottom: 10px;
+}
+
+.buttonDelete {
+    background-color: rgb(177, 164, 110);
+    border-radius: 5px;
+}
+
+.buttonDelete:hover {
+    background-color: rgb(150, 138, 94);
 }
