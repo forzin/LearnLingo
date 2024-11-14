@@ -19,8 +19,8 @@ const authConfig = {
     whitelist: ['token']
 };
 
-import { contactsReduser } from "./contacts/contactsSlice";
-import { filterReducer } from "./filters/filterSlice";
+import { contactsReduser } from "./contacts/slice";
+import { filterReducer } from "./filters/slice";
 import { authReducer } from "./auth/authSlice";
 
 export const store = configureStore({

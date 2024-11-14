@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 const Contact = React.lazy(() => import('../Contact/Contact'));
 
 import styles from './ContactList.module.css';
-import { selectContacts, selectContactsIsLoading, selectFilteredContacts } from '../../redux/contacts/contactsSlice';
+import { selectContacts, selectContactsIsLoading, selectFilteredContacts } from '../../redux/contacts/selectors.js';
 
 import { fetchContacts } from '../../redux/contacts/operations';
 

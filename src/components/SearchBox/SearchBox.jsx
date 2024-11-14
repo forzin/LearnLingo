@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { changeFilter } from "../../redux/filters/filterSlice";
+import { changeFilter } from "../../redux/filters/slice";
 
 
 const SeacrhBox = () => {
