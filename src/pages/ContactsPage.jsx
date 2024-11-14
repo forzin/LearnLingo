@@ -1,18 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { fetchContacts } from "../redux/contacts/operations";
+import { useDispatch } from "react-redux";
 
 const ContactForm = React.lazy(() => import('../components/ContactForm/ContactForm'));
 const ContactList = React.lazy(() => import('../components/ContactList/ContactList'));
-const SeacrhBox = React.lazy(() => import('../components/SearchBox/SearchBox'));
+const SearchBox = React.lazy(() => import('../components/SearchBox/SearchBox'));
 
 const ContactsPage = () => {
 
-    
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
 
     return (
         <>
            <div>
                <ContactForm />
-               <SeacrhBox />
+               <SearchBox />
                <ContactList />
            </div>
        </>

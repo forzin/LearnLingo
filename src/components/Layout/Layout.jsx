@@ -4,10 +4,11 @@ const AppBar = React.lazy(() => import('../AppBar/AppBar'));
 
 import styles from './Layout.module.css'
 
-const Layout = () => {
+const Layout = ({ children }) => {
     return (
       <div className={styles.appBar}>
-        <AppBar />
+        {<AppBar />}
+        {children} 
       </div>
     );
 }
