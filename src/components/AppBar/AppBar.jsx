@@ -1,7 +1,7 @@
 import React from "react";
 
 import { useSelector } from "react-redux";
-import { selectUserDataIsLoggedIn } from "../../redux/auth/authSlice";
+import { selectUserDataIsLoggedIn } from "../../redux/auth/selectors";
 
 const AuthNav = React.lazy(() => import('../AuthNav/AuthNav'));
 const Navigation = React.lazy(() => import('../Navigation/Navigation'));

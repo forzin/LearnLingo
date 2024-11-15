@@ -2,7 +2,7 @@ import './App.css'
 import { useDispatch, useSelector } from 'react-redux';
 import React, { Suspense, useEffect } from 'react';
 import { refreshUser } from './redux/auth/operations';
-import { selectUserDataIsRefreshing } from './redux/auth/authSlice';
+import { selectUserDataIsRefreshing } from './redux/auth/selectors';
 import { Toaster } from 'react-hot-toast';
 
 const AppRoutes = React.lazy(() => import('./components/AppRoutes/AppRoutes'));

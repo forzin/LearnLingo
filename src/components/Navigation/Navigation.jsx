@@ -3,7 +3,7 @@ import { NavLink} from 'react-router-dom';
 import clsx from 'clsx';
 import styles from './Navigation.module.css';
 import { useSelector } from 'react-redux';
-import { selectUserDataIsLoggedIn } from '../../redux/auth/authSlice';
+import { selectUserDataIsLoggedIn } from '../../redux/auth/selectors';
 
 export const activeLink = ({ isActive }) => clsx(styles.link, isActive && styles.active);
 
