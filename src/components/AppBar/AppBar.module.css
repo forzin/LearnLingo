@@ -2,4 +2,6 @@
     display: flex;
     justify-content: space-between;
 
+    background-color: #0f0e22;
+    border: 3px solid #131229;
 }

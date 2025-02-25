@@ -41,17 +41,17 @@ const RegistrationForm = () => {
    return (
      <Formik initialValues={initialValues} validationSchema={profileFormFilter} onSubmit={handleSubmit}>
        <Form className={styles.formList}>
-          <label>
+          <label className={styles.inputContainer}>
             <span className={styles.formTitle}>Name:</span>
             <Field type='text' name='name' placeholder='Danilov Danil'></Field>
             <ErrorMessage name='name' component='span' />
           </label>
-          <label>
+          <label className={styles.inputContainer}>
             <span className={styles.formTitle}>Email:</span>
             <Field type='text' name='email' placeholder='user@gmail.com'></Field>
             <ErrorMessage name='email' component='span' />
           </label>
-          <label>
+          <label className={styles.inputContainer}>
             <span className={styles.formTitle}>Password:</span>
             <Field type='password' name='password' placeholder='Qfhhd@kg'></Field>
             <ErrorMessage name='password' component='span' />
