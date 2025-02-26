@@ -1,6 +1,8 @@
 import { useDispatch } from 'react-redux';
 import styles from './Contact.module.css';
 import { deleteContact } from '../../redux/contacts/operations';
+import icon from '../../img/icons/icons.svg';
+
 
 const Contact = ({ name, phone, id }) => {
 
@@ -18,7 +20,15 @@ const Contact = ({ name, phone, id }) => {
                <p>Phone: {phone}</p>
             </div>
             <div>
-                <button className={styles.buttonDelete} type='button' onClick={onDelete}>Delete</button>
+                <button className={styles.buttonDelete} type='button' onClick={onDelete}>
+                    <svg
+                        className={styles.iconCross}
+                        width="15"
+                        height="15"
+                    >
+                        <use href={`${icon}#icon-cross`}></use>
+                    </svg>
+                </button>
             </div>
         </div>
     );

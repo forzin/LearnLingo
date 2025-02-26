@@ -1,5 +1,5 @@
 import {Formik, Form, Field, ErrorMessage} from 'formik';
-import styles from './ContactForm.module.css';
+import styles from '../RegistrationForm/RegistrationForm.module.css';
 
 import * as Yup from 'yup';
 
@@ -31,17 +31,39 @@ const ContactForm = () => {
     return (
         <Formik initialValues={initialValues} validationSchema={profileFormFilter} onSubmit={handleSubmit}>
             <Form className={styles.formList}>
-                <label>
+                <label className={styles.inputContainer}>
                     <span className={styles.formTitle}>Name:</span>
-                    <Field type='text' name='name' placeholder='Danilov Danil'></Field>
-                    <ErrorMessage name='name' component='span' />
+                    <div className={styles.msgContainer}>
+                        <Field
+                            className={styles.formField}
+                            type='text'
+                            name='name'
+                            placeholder='Danilov Danil'
+                        ></Field>
+                        <ErrorMessage
+                            className={styles.formErrorMsg}
+                            name='name'
+                            component='span'
+                        />
+                    </div>
                 </label>
-                <label>
+                <label className={styles.inputContainer}>
                     <span className={styles.formTitle}>Phone:</span>
-                    <Field type='text' name='number' placeholder='+380 xxxxx xxx'></Field>
-                    <ErrorMessage name='number' component='span' />
+                    <div className={styles.msgContainer}>
+                        <Field
+                            className={styles.formField}
+                            type='text'
+                            name='number'
+                            placeholder='+380 xxxxx xxx'
+                        ></Field>
+                        <ErrorMessage
+                            className={styles.formErrorMsg}
+                            name='number'
+                            component='span'
+                        />
+                    </div>
                 </label>
-                <button type='submit' className={styles.buttonDelete}>Add Contact</button>
+                <button type='submit' className={styles.buttonRegister}>Add Contact</button>
             </Form>
         </Formik>
     );

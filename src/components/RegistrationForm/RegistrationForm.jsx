@@ -16,7 +16,7 @@ const nameRegex = /^[A-Za-zА-Яа-яЁёІіЇїЄєҐґ'’-]{2,50}$/;
 
 const profileFormFilter = Yup.object({
     name: Yup.string()
-      .min(3, 'Name must be at least 3 characters')
+      .min(2, 'Name must be at least 2 characters')
       .max(50, 'Name must be less than 50 characters')
       .required('Name is required')
       .matches(nameRegex, 'Invalid name!'), 
@@ -43,20 +43,52 @@ const RegistrationForm = () => {
        <Form className={styles.formList}>
           <label className={styles.inputContainer}>
             <span className={styles.formTitle}>Name:</span>
-            <Field type='text' name='name' placeholder='Danilov Danil'></Field>
-            <ErrorMessage name='name' component='span' />
+            <div className={styles.msgContainer}>
+              <Field
+                className={styles.formField}
+                type='text'
+                name='name'
+                placeholder='John Marson'
+              ></Field>
+              <ErrorMessage
+                className={styles.formErrorMsg}
+                name='name'
+                component='span'
+              />
+            </div>
           </label>
           <label className={styles.inputContainer}>
-            <span className={styles.formTitle}>Email:</span>
-            <Field type='text' name='email' placeholder='user@gmail.com'></Field>
-            <ErrorMessage name='email' component='span' />
+           <span className={styles.formTitle}>Email:</span>
+           <div className={styles.msgContainer}>
+              <Field
+                className={styles.formField}
+                type='text' name='email'
+                placeholder='user@gmail.com'
+              ></Field>
+              <ErrorMessage
+                className={styles.formErrorMsg}
+                name='email'
+                component='span'
+              />
+           </div>
           </label>
           <label className={styles.inputContainer}>
-            <span className={styles.formTitle}>Password:</span>
-            <Field type='password' name='password' placeholder='Qfhhd@kg'></Field>
-            <ErrorMessage name='password' component='span' />
+           <span className={styles.formTitle}>Password:</span>
+           <div className={styles.msgContainer}>
+              <Field
+                className={styles.formField}
+                type='password'
+                name='password'
+                placeholder='1Y3jfiori4'
+              ></Field>
+              <ErrorMessage
+                className={styles.formErrorMsg}
+                name='password'
+                component='span'
+              />
+           </div>
           </label>
-          <button type='submit' className={styles.buttonDelete}>Sign Up</button>
+          <button type='submit' className={styles.buttonRegister}>Sign Up</button>
        </Form>
      </Formik>
    )

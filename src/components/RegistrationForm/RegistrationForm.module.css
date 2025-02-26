@@ -14,18 +14,95 @@
 .formList {
     display: flex;
     flex-direction: column;
-    row-gap: 20px;
-    padding-top: 300px;
+    row-gap: 25px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 180px;
+
+    width: 300px;
+    background-color: #0f0e22;
+    
+    border-radius: 12px;
+    border: 3px solid #131229;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+    padding: 30px;
 }
 
 .formTitle {
+    font-size: 20px;
     margin-right: 10px;
+    margin-bottom: 8px;
+}
+
+.formField {
+    width: 260px;
+    padding: 20px;
+    
+    color: #f5fac9;
+    font-size: 16px;
+
+    background-color: #282649;
+    border-radius: 12px;
+    border: 3px solid #131229;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+    outline: none;
+    transition: all 0.3s;
+}
+
+.formField::placeholder {
+    font-size: 16px;
+}
+
+.formField:focus {
+    border-color: #f5fac9;
+}
+
+.msgContainer {
+    position: relative;
+}
+
+.formErrorMsg {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 129%;
+    
+    color: #EF5050;
+}
+
+.buttonRegister {
+    width: 300px;
+    background-color: #282649;
+
+    color: #676581;
+    
+    border-radius: 12px;
+    border: 3px solid #131229;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 6px;
+    padding-bottom: 6px;
+
+    transition: all 0.3s;
+}
+
+.buttonRegister:hover {
+    color: #f5fac9;
+    background-color: #373455;
 }
 
 .buttonDelete {
     width: 280px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.textFilter {
+    font-size: 20px;
 }

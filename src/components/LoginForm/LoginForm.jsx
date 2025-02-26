@@ -32,17 +32,39 @@ const LoginForm = () => {
    return (
      <Formik initialValues={initialValues} validationSchema={profileFormFilter} onSubmit={handleSubmit}>
        <Form className={styles.formList}>
-          <label>
-            <span className={styles.formTitle}>Email:</span>
-            <Field type='text' name='email' placeholder='user@gmail.com'></Field>
-            <ErrorMessage name='email' component='span' />
+          <label className={styles.inputContainer}>
+           <span className={styles.formTitle}>Email:</span>
+           <div className={styles.msgContainer}>
+             <Field
+               className={styles.formField}
+               type='text'
+               name='email'
+               placeholder='user@gmail.com'
+             ></Field>
+             <ErrorMessage
+               className={styles.formErrorMsg}
+               name='email'
+               component='span'
+             />
+           </div>
           </label>
-          <label>
-            <span className={styles.formTitle}>Password:</span>
-            <Field type='password' name='password' placeholder='Qfhhd@kg'></Field>
-            <ErrorMessage name='password' component='span' />
+          <label className={styles.inputContainer}>
+           <span className={styles.formTitle}>Password:</span>
+           <div className={styles.msgContainer}>
+             <Field
+               className={styles.formField}
+               type='password'
+               name='password'
+               placeholder='Qfhhd@kg'
+             ></Field>
+             <ErrorMessage
+               className={styles.formErrorMsg}
+               name='password'
+               component='span'
+             /> 
+           </div>
           </label>
-          <button type='submit' className={styles.buttonDelete}>Sign In</button>
+          <button type='submit' className={styles.buttonRegister}>Sign In</button>
        </Form>
      </Formik>
    )
