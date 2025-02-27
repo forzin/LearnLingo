@@ -1,16 +1,18 @@
-import { useDispatch } from 'react-redux';
 import styles from './Contact.module.css';
-import { deleteContact } from '../../redux/contacts/operations';
 import icon from '../../img/icons/icons.svg';
+import { useState } from 'react';
+import ModalDelete from '../ModalDelete/ModalDelete';
 
 
 const Contact = ({ name, phone, id }) => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const dispatch = useDispatch();
+    const onOpenModal = () => {
+        setIsModalOpen(true);
+    }
 
-    const onDelete = () => {
-        const action = deleteContact(id);
-        dispatch(action);
+    const onCloseModal = () => {
+        setIsModalOpen(false);
     }
 
     return (
@@ -20,7 +22,7 @@ const Contact = ({ name, phone, id }) => {
                <p>Phone: {phone}</p>
             </div>
             <div>
-                <button className={styles.buttonDelete} type='button' onClick={onDelete}>
+                <button className={styles.buttonDelete} type='button' onClick={onOpenModal}>
                     <svg
                         className={styles.iconCross}
                         width="15"
@@ -30,6 +32,12 @@ const Contact = ({ name, phone, id }) => {
                     </svg>
                 </button>
             </div>
+            {isModalOpen && <ModalDelete
+                id={id}
+                isOpen={isModalOpen}
+                onClose={onCloseModal}
+                name={name}
+            />}
         </div>
     );
 }

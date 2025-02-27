@@ -1,0 +1,76 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: opacity 0.3s ease;
+}
+
+.modalContainer {
+    width: 350px;
+    margin: 0 auto;
+    padding: 30px;
+    max-height: 80%;
+    
+    border-radius: 10px;
+    background-color: #0f0e22;
+    border: 3px solid #131229;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    
+    overflow-y: auto;
+    scrollbar-width: none
+}
+
+.modalOverlay.isOpen {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modalText {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.modalButtonContainer {
+    display: flex;
+    justify-content: center;
+    column-gap: 60px;
+}
+
+.modalButtonYes {
+    color: #2be21a;
+    font-size: 23px;
+    background-color: #1d1b38;
+    border-radius: 12px;
+    padding: 10px;
+    transition: all 0.3s;
+}
+
+.modalButtonYes:hover {
+    color: #f5fac9;
+    background-color: #2a2747;
+}
+
+.modalButtonNo {
+    color: #f34242;
+    font-size: 23px;
+    background-color: #1d1b38;
+    border-radius: 12px;
+    padding: 10px;
+    transition: all 0.3s;
+}
+
+.modalButtonNo:hover {
+    color: #f5fac9;
+    background-color: #2a2747;
+}
