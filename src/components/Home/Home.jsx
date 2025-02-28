@@ -20,7 +20,13 @@ const Home = () => {
                <h1 className={styles.descriptionTitleHero}>Benefits</h1>
                <ul className={styles.benefitsListHero}>
                   <li className={styles.benefitsItemHero}>
-                     
+                     <svg
+                        className={styles.svg}
+                        width="23"
+                        height="20"
+                     >
+                        <use href={`${icon}#icon-heart`}></use>
+                     </svg>
                      Completely Free to Use
                   </li>
                   <li className={styles.benefitsItemHero}>
