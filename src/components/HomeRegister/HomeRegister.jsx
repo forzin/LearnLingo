@@ -1,9 +1,9 @@
-import styles from './Home.module.css'
+import styles from './HomeRegister.module.css'
 import icon from '../../img/icons/icons.svg';
 
 import { NavLink } from 'react-router-dom';
 
-const Home = () => {
+const HomeRegister = () => {
    return (
       <>
          <div className={styles.containerHero}>
@@ -91,4 +91,4 @@ const Home = () => {
    );
 }
 
-export default Home;
+export default HomeRegister;
