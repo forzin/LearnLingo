@@ -10,9 +10,11 @@
   font-size: 16px;
   line-height: 125%;
   color: #121417;
+  transition: all 0.3s;
 }
 
 .register {
+  width: 166px;
   font-weight: 700;
   font-size: 16px;
   line-height: 125%;
@@ -28,4 +30,6 @@
 
 .login {
   margin-right: 16px;
+  background: none;
+  padding: 0;
 }

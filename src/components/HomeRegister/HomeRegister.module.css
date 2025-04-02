@@ -1,81 +1,127 @@
 .containerHero {
-    display: flex;
-    justify-content: center;
-    column-gap: 100px;
-
-    background-color: #0E0D20;
-    padding-top: 180px;
-    
-    width: 100%;
+  color: #121417;
+  display: flex;
+  flex-direction: column;
 }
 
-.containerHeroDescription {
-    width: 650px;
-    background-color: #0f0e22;
-
-    border-radius: 12px;
-    border: 3px solid #131229;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-
-    padding: 30px;
+.textContainerHero {
+  display: flex;
+  margin-bottom: 25px;
 }
 
-.descriptionTitleHero {
-    color: #676581;
-    font-size: 45px;
-
-    margin-bottom: 20px;
+.infoContainerHero {
+  margin-right: 120px;
+  padding-top: 118px;
 }
 
-.descriptionTextHero {
-    color: #676581;
-    font-size: 22px;
-    text-align: justify;
-
-    margin-bottom: 40px;
+.imgHero {
+  padding-top: 20px;
 }
 
-.registerHeroButton {
-    display: flex;
-    color: #403f63;
-    justify-content: center;
-    font-size: 23px;
-    background-color: #1d1b38;
-    border-radius: 12px;
-    padding: 15px 30px;
-    transition: all 0.3s;
+.bigTextHero {
+  width: 560px;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 117%;
+  letter-spacing: -0.02em;
+  margin-bottom: 32px;
 }
 
-.registerHeroButton:hover {
-    color: #f5fac9;
-    background-color: #2a2747;
+.word {
+  position: relative;
+  font-style: italic;
+  font-weight: 400;
+  z-index: 1;
 }
 
-.containerHeroBenefits {
-    width: 330px;
-    background-color: #0f0e22;
-        
-    border-radius: 12px;
-    border: 3px solid #131229;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        
-    padding: 30px;
+.word::after {
+  content: "";
+  position: absolute;
+  top: 19px;
+  left: -5px;
+  display: block;
+  background-color: #cbded3;
+  border-radius: 8px;
+  width: 195px;
+  height: 40px;
+  z-index: -1;
 }
 
-.benefitsListHero {
-    color: #676581;
-    font-size: 22px;
-    text-align: start;
+.smallTextHero {
+  width: 471px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 137%;
+  letter-spacing: -0.02em;
+  margin-bottom: 64px;
 }
 
-.benefitsItemHero:not(:last-child) {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+.buttonHero {
+  border-radius: 12px;
+  padding: 16px 88px;
+  background-color: #9fbaae;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 156%;
+  color: #121417;
+  transition: all 0.3s;
 }
 
-.svg {
-    fill: #676581;
-    stroke: none;
-    margin-right: 8px;
+.buttonHero:hover {
+  background-color: #cbded3;
+}
+
+.listHero {
+  display: flex;
+  justify-content: center;
+  column-gap: 100px;
+  align-items: center;
+  border: 1.5px dashed #9fbaae;
+  border-radius: 30px;
+  width: 1312px;
+  height: 116px;
+}
+
+.listItemHero {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 114%;
+  letter-spacing: -0.02em;
+}
+
+.listItemHero:nth-child(1) {
+  width: 217px;
+  height: 36px;
+}
+
+.listItemHero:nth-child(2) {
+  width: 232px;
+  height: 36px;
+}
+
+.listItemHero:nth-child(3) {
+  width: 159px;
+  height: 36px;
+}
+
+.listItemHero:nth-child(4) {
+  width: 161px;
+  height: 36px;
+}
+
+.listItemTextHero {
+  width: 74px;
+  height: 36px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
+  color: rgba(18, 20, 23, 0.7);
+  margin-left: 16px;
+}
+
+.textListContainerHero {
+  align-self: center;
 }

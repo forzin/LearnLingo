@@ -1,108 +1,151 @@
-.formListContainer {
-    padding-top: 300px;
+.formContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 150px;
+
+  width: 566px;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding-top: 64px;
+  padding-bottom: 64px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  z-index: 10;
+  background-color: #fff;
 }
 
-.inputContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
 
-    margin-left: auto;
-    margin-right: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: opacity 0.3s ease;
 }
 
-.formList {
-    display: flex;
-    flex-direction: column;
-    row-gap: 25px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 150px;
+.modalOverlay.isOpen {
+  opacity: 1;
+  pointer-events: auto;
+}
 
-    width: 300px;
-    background-color: #0f0e22;
-    
-    border-radius: 12px;
-    border: 3px solid #131229;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+.closeBtn {
+  display: flex;
+  background: none;
+  justify-content: center;
+  border: none;
+}
 
-    padding: 30px;
+.formListTitle {
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  color: #121417;
+}
+
+.formListText {
+  width: 438px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 137%;
+  color: rgba(18, 20, 23, 0.8);
+  margin-bottom: 40px;
 }
 
 .formTitle {
-    font-size: 20px;
-    margin-right: 10px;
-    margin-bottom: 8px;
+  font-size: 20px;
+  margin-right: 10px;
+  margin-bottom: 8px;
+}
+
+.formList {
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
 }
 
 .formField {
-    width: 260px;
-    padding: 20px;
-    
-    color: #f5fac9;
-    font-size: 16px;
-
-    background-color: #282649;
-    border-radius: 12px;
-    border: 3px solid #131229;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-
-    outline: none;
-    transition: all 0.3s;
+  width: 396px;
+  padding: 16px 18px;
+  color: #121417;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(18, 20, 23, 0.1);
+  background-color: #fff;
+  outline: none;
+  transition: all 0.3s;
 }
 
 .formField::placeholder {
-    font-size: 16px;
-}
-
-.formField:focus {
-    border-color: #f5fac9;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 137%;
+  color: #121417;
 }
 
 .msgContainer {
-    position: relative;
+  position: relative;
 }
 
 .formErrorMsg {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 129%;
-    
-    color: #EF5050;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 129%;
+
+  color: #ef5050;
 }
 
 .buttonRegister {
-    width: 300px;
-    background-color: #282649;
-
-    color: #676581;
-    
-    border-radius: 12px;
-    border: 3px solid #131229;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 6px;
-    padding-bottom: 6px;
-
-    transition: all 0.3s;
+  width: 438px;
+  background-color: #9fbaae;
+  border-radius: 12px;
+  color: #121417;
+  border: none;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  transition: all 0.3s;
 }
 
 .buttonRegister:hover {
-    color: #f5fac9;
-    background-color: #373455;
+  background-color: #cbded3;
 }
 
 .buttonDelete {
-    width: 280px;
-    margin-left: auto;
-    margin-right: auto;
+  width: 280px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .textFilter {
-    font-size: 20px;
+  font-size: 20px;
+}
+
+.iconHero {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  stroke: #121417;
+  display: flex;
+  background: none;
+  justify-content: center;
+  border: none;
 }

@@ -38,17 +38,19 @@ const RegistrationForm = () => {
      
   };
 
-   return (
-     <Formik initialValues={initialValues} validationSchema={profileFormFilter} onSubmit={handleSubmit}>
+  return (
+    <div className={styles.formContainer}>
+      <h2 className={styles.formListTitle}>Registration</h2>
+      <p className={styles.formListText}>Thank you for your interest in our platform! In order to register, we need some information. Please provide us with the following information</p>
+      <Formik initialValues={initialValues} validationSchema={profileFormFilter} onSubmit={handleSubmit}>
        <Form className={styles.formList}>
-          <label className={styles.inputContainer}>
-            <span className={styles.formTitle}>Name:</span>
+          <label>
             <div className={styles.msgContainer}>
               <Field
                 className={styles.formField}
                 type='text'
                 name='name'
-                placeholder='John Marson'
+                placeholder='Name'
               ></Field>
               <ErrorMessage
                 className={styles.formErrorMsg}
@@ -57,13 +59,12 @@ const RegistrationForm = () => {
               />
             </div>
           </label>
-          <label className={styles.inputContainer}>
-           <span className={styles.formTitle}>Email:</span>
+          <label>
            <div className={styles.msgContainer}>
               <Field
                 className={styles.formField}
                 type='text' name='email'
-                placeholder='user@gmail.com'
+                placeholder='Email'
               ></Field>
               <ErrorMessage
                 className={styles.formErrorMsg}
@@ -72,14 +73,13 @@ const RegistrationForm = () => {
               />
            </div>
           </label>
-          <label className={styles.inputContainer}>
-           <span className={styles.formTitle}>Password:</span>
+          <label>
            <div className={styles.msgContainer}>
               <Field
                 className={styles.formField}
                 type='password'
                 name='password'
-                placeholder='1Y3jfiori4'
+                placeholder='Password'
               ></Field>
               <ErrorMessage
                 className={styles.formErrorMsg}
@@ -90,7 +90,8 @@ const RegistrationForm = () => {
           </label>
           <button type='submit' className={styles.buttonRegister}>Sign Up</button>
        </Form>
-     </Formik>
+      </Formik>
+     </div>
    )
 }
 
