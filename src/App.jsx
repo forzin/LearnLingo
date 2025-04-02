@@ -1,4 +1,4 @@
-import './App.css'
+import './App.module.css'
 import { useDispatch, useSelector } from 'react-redux';
 import React, { Suspense, useEffect } from 'react';
 import { refreshUser } from './redux/auth/operations';

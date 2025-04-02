@@ -1,0 +1,31 @@
+.linksContainer {
+  display: flex;
+  align-items: center;
+}
+
+.userLinks {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+  color: #121417;
+}
+
+.register {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+  color: #fff;
+  border-radius: 12px;
+  padding: 14px 39px;
+  background-color: #121417;
+}
+
+.iconLogin {
+  margin-right: 8px;
+}
+
+.login {
+  margin-right: 16px;
+}

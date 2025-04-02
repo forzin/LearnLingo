@@ -1,7 +1,43 @@
 .appBarContainer {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #fff;
+}
 
-    background-color: #0f0e22;
-    border: 3px solid #131229;
+.logoText {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  color: #121417;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  margin-right: 390px;
+}
+
+.logoIcon {
+  margin-right: 8px;
+}
+
+.linkList {
+  display: flex;
+  justify-content: center;
+  column-gap: 28px;
+  margin-right: 268px;
+}
+
+.link {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #676581;
+  transition: all 0.3s;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 125%;
+  color: #121417;
 }

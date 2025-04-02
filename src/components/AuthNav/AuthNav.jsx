@@ -1,14 +1,19 @@
-import { activeLink } from "../Navigation/Navigation";
 import { NavLink } from 'react-router-dom';
+import icon from "../../img/icons/icons.svg";
 
-import styles from '../Navigation/Navigation.module.css';
+import styles from './AuthNav.module.css';
 
 const AuthNav = () => {
     return (
       <>
-        <div className={styles.linkList}>
-          <NavLink className={activeLink} to='/register'>Register</NavLink>
-          <NavLink className={activeLink} to='/login'>Login</NavLink>
+        <div className={styles.linksContainer}>
+          <NavLink className={`${styles.userLinks} ${styles.login}`} to='/login'>
+            <svg className={styles.iconLogin} width="20" height="20">
+              <use href={`${icon}#icon-log-in`}></use>
+            </svg>
+            Log In
+          </NavLink>
+          <NavLink className={`${styles.userLinks} ${styles.register}`} to='/register'>Registration</NavLink>
         </div>
      </>
     );

@@ -6,7 +6,7 @@ const RestrictedRoute = React.lazy(() => import('../RestrictedRoute/RestrictedRo
 const HomePage = React.lazy(() => import('../../pages/HomePage'));
 const RegistrationPage = React.lazy(() => import('../../pages/RegistrationPage'));
 const LoginPage = React.lazy(() => import('../../pages/LoginPage'));
-const ContactsPage = React.lazy(() => import('../../pages/ContactsPage'));
+const TeachersPage = React.lazy(() => import('../../pages/TeachersPage'));
 
 
 const AppRoutes = () => {
@@ -17,7 +17,7 @@ const AppRoutes = () => {
                <Route path='/' element={<HomePage />} />
                <Route path='/register' element={<RestrictedRoute component={<RegistrationPage />} /> } />
                <Route path='/login' element={<RestrictedRoute component={<LoginPage />} /> } />
-               <Route path='/contacts' element={<PrivateRoute component={<ContactsPage />} />} />
+               <Route path='/teachers' element={<PrivateRoute component={<TeachersPage />} />} />
             </Routes>
           </Suspense>
         </div>
