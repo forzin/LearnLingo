@@ -1,4 +1,5 @@
 import { ErrorMessage, Field, Formik, Form } from "formik";
+import icon from "../../img/icons/icons.svg";
 
 import styles from './RegistrationForm.module.css'
 
@@ -28,7 +29,7 @@ const profileFormFilter = Yup.object({
      .required('Password is required')
 })
 
-const RegistrationForm = () => {
+const RegistrationForm = ({isOpen, onCloseModal}) => {
 
     const dispatch = useDispatch();
 
@@ -39,59 +40,66 @@ const RegistrationForm = () => {
   };
 
   return (
-    <div className={styles.formContainer}>
-      <h2 className={styles.formListTitle}>Registration</h2>
-      <p className={styles.formListText}>Thank you for your interest in our platform! In order to register, we need some information. Please provide us with the following information</p>
-      <Formik initialValues={initialValues} validationSchema={profileFormFilter} onSubmit={handleSubmit}>
-       <Form className={styles.formList}>
-          <label>
-            <div className={styles.msgContainer}>
-              <Field
-                className={styles.formField}
-                type='text'
-                name='name'
-                placeholder='Name'
-              ></Field>
-              <ErrorMessage
-                className={styles.formErrorMsg}
-                name='name'
-                component='span'
-              />
-            </div>
-          </label>
-          <label>
-           <div className={styles.msgContainer}>
-              <Field
-                className={styles.formField}
-                type='text' name='email'
-                placeholder='Email'
-              ></Field>
-              <ErrorMessage
-                className={styles.formErrorMsg}
-                name='email'
-                component='span'
-              />
-           </div>
-          </label>
-          <label>
-           <div className={styles.msgContainer}>
-              <Field
-                className={styles.formField}
-                type='password'
-                name='password'
-                placeholder='Password'
-              ></Field>
-              <ErrorMessage
-                className={styles.formErrorMsg}
-                name='password'
-                component='span'
-              />
-           </div>
-          </label>
-          <button type='submit' className={styles.buttonRegister}>Sign Up</button>
-       </Form>
-      </Formik>
+    <div className={`${styles.modalOverlay} ${isOpen ? styles.isOpen : ''}`}>
+      <div className={styles.formContainer}>
+        <button onClick={onCloseModal} className={styles.closeBtn}>
+          <svg className={styles.iconHero} width="32" height="32">
+            <use href={`${icon}#icon-x`}></use>
+          </svg>
+        </button>
+        <h2 className={styles.formListTitle}>Registration</h2>
+        <p className={styles.formListText}>Thank you for your interest in our platform! In order to register, we need some information. Please provide us with the following information</p>
+        <Formik initialValues={initialValues} validationSchema={profileFormFilter} onSubmit={handleSubmit}>
+          <Form className={styles.formList}>
+            <label>
+              <div className={styles.msgContainer}>
+                <Field
+                  className={styles.formField}
+                  type='text'
+                  name='name'
+                  placeholder='Name'
+                ></Field>
+                <ErrorMessage
+                  className={styles.formErrorMsg}
+                  name='name'
+                  component='span'
+                />
+              </div>
+            </label>
+            <label>
+              <div className={styles.msgContainer}>
+                  <Field
+                    className={styles.formField}
+                    type='text' name='email'
+                    placeholder='Email'
+                  ></Field>
+                  <ErrorMessage
+                    className={styles.formErrorMsg}
+                    name='email'
+                    component='span'
+                  />
+              </div>
+            </label>
+            <label>
+              <div className={styles.msgContainer}>
+                  <Field
+                    className={styles.formField}
+                    type='password'
+                    name='password'
+                    placeholder='Password'
+                  ></Field>
+                  <ErrorMessage
+                    className={styles.formErrorMsg}
+                    name='password'
+                    component='span'
+                  />
+              </div>
+            </label>
+            <button type='submit' className={styles.buttonRegister}>Sign Up</button>
+          </Form>
+        </Formik>
      </div>
+    </div>
    )
 }
 

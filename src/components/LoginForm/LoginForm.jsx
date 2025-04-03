@@ -6,7 +6,6 @@ import { ErrorMessage, Field, Formik, Form } from "formik";
 
 import * as Yup from 'yup';
 import { login } from '../../redux/auth/operations';
-import { useState } from 'react';
 
 const initialValues = {
     email: '',
@@ -22,24 +21,19 @@ const profileFormFilter = Yup.object({
      .required('Password is required')
 })
 
-const LoginForm = () => {
+const LoginForm = ({isOpen, onCloseModal}) => {
 
   const dispatch = useDispatch();
-  const [isModalOpen, setIsModalOpen] = useState(true);
 
   const handleSubmit = (values, actions) => {
     dispatch(login(values));
     actions.resetForm();    
   };
 
-  const toggleModal = () => {
-    setIsModalOpen(!isModalOpen);
-  };
-
   return (
-    <div className={`${styles.modalOverlay} ${isModalOpen ? styles.isOpen : ''}`}>
+    <div className={`${styles.modalOverlay} ${isOpen ? styles.isOpen : ''}`}>
       <div className={styles.formContainer}>
-        <button onClick={toggleModal} className={styles.closeBtn}>
+        <button onClick={onCloseModal} className={styles.closeBtn}>
           <svg className={styles.iconHero} width="32" height="32">
             <use href={`${icon}#icon-x`}></use>
           </svg>
