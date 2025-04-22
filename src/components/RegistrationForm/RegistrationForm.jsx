@@ -4,7 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import styles from './RegistrationForm.module.css'
 import * as Yup from 'yup';
 import { useDispatch } from "react-redux";
-import { register } from "../../redux/auth/operations";
+import { register as registerUser } from '../../redux/auth/operations';
 
 const nameRegex = /^[A-Za-zА-Яа-яЁёІіЇїЄєҐґ'’-]{2,50}$/;
 
@@ -24,6 +24,7 @@ const profileFormFilter = Yup.object({
 
 const RegistrationForm = ({ isOpen, onCloseModal }) => {
   const {
+      reset,
       register,
       handleSubmit,
       formState: { errors },
@@ -38,10 +39,9 @@ const RegistrationForm = ({ isOpen, onCloseModal }) => {
 
   const dispatch = useDispatch();
 
-  const handleSubmitButton = (values, actions) => {
-    dispatch(register(values));
-    actions.resetForm();
-     
+  const handleSubmitButton = (values) => {
+    dispatch(registerUser(values));
+    reset();
   };
 
   return (

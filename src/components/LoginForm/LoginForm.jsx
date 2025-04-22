@@ -18,6 +18,7 @@ const profileFormFilter = Yup.object({
 const LoginForm = ({ isOpen, onCloseModal }) => {
   
   const {
+    reset,
     register,
     handleSubmit,
     formState: { errors },
@@ -31,9 +32,9 @@ const LoginForm = ({ isOpen, onCloseModal }) => {
 
   const dispatch = useDispatch();
 
-  const handleSubmitButton = (values, actions) => {
+  const handleSubmitButton = (values) => {
     dispatch(login(values));
-    actions.resetForm();    
+    reset();    
   };
 
   return (
