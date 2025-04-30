@@ -1,15 +1,30 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { authInstance } from "../auth/userToken";
+import { ref, get, child } from "firebase/database";
+import { rtdb } from "../../../firebaseConfig";
 import toast from "react-hot-toast";
 import { customToastOptions } from "../../components/ToastMessages/ToastMessages";
 
-export const fetchContacts = createAsyncThunk(
-    'contacts/fetchAll',
+export const fetchTeachers = createAsyncThunk(
+    'teachers/fetchAll',
     async (_, thunkApi) => {
         try {
-            const  { data }  = await authInstance.get('/contacts');
+            const dbRef = ref(rtdb);
+            const snapshot = await get(child(dbRef, "teachers")); 
 
-            return data;
+            if (snapshot.exists()) {
+                const data = snapshot.val();
+
+                console.log("Отримані дані з Firebase:", data);
+                
+                return Object.entries(data).map(([key, value]) => ({
+                    id: key,
+                    ...value
+                }));
+            } else {
+                console.log("Даних не знайдено у гілці 'teachers'");
+                return [];
+            }
         } catch (error) {
             return thunkApi.rejectWithValue(error.message);
         }

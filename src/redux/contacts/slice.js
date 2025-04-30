@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchContacts, addContact, deleteContact } from "./operations";
+import { fetchTeachers, addContact, deleteContact } from "./operations";
 import { logout } from '../auth/operations';
 
 const INITIAL_STATE = {
@@ -14,15 +14,15 @@ const contactSlice = createSlice ({
     name: 'contacts',
     initialState: INITIAL_STATE,
     extraReducers: (builder) => builder
-    .addCase(fetchContacts.pending, ( state ) => {
+    .addCase(fetchTeachers.pending, ( state ) => {
         state.contacts.loading = true;
         state.contacts.error = null;
     })
-    .addCase(fetchContacts.fulfilled, ( state, action ) => {
+    .addCase(fetchTeachers.fulfilled, ( state, action ) => {
         state.contacts.loading = false;
         state.contacts.items = action.payload;
     })
-    .addCase(fetchContacts.rejected, ( state, action ) => {
+    .addCase(fetchTeachers.rejected, ( state, action ) => {
         state.contacts.loading = false;
         state.contacts.error = action.payload;
     })

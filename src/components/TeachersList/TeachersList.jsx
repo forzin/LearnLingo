@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
-const Contact = React.lazy(() => import('../Contact/Contact'));
+const Teacher = React.lazy(() => import('../Teacher/Teacher.jsx'));
 
-import styles from './ContactList.module.css';
+import styles from './TeachersList.module.css';
 import { selectContacts, selectContactsIsLoading, selectFilteredContacts } from '../../redux/contacts/selectors.js';
 
-import { fetchContacts } from '../../redux/contacts/operations';
+import { fetchTeachers } from '../../redux/contacts/operations.js';
 
 
 const ContactList = () => {
@@ -16,7 +16,7 @@ const ContactList = () => {
     const isLoading = useSelector(selectContactsIsLoading);
 
     useEffect(() => {
-        dispatch(fetchContacts());
+        dispatch(fetchTeachers());
     }, [dispatch]);
     
     return (
@@ -27,7 +27,7 @@ const ContactList = () => {
             )}
             {Array.isArray(filter) && contacts.length > 0 && filter.map(contactsItem => {
                 return (
-                    <Contact 
+                    <Teacher 
                        key={contactsItem.id}
                        id={contactsItem.id}
                        name={contactsItem.name}

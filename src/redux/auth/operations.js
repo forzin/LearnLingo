@@ -79,7 +79,7 @@ export const refreshUser = createAsyncThunk(
               photoURL: user.photoURL,
               token: token, // тепер тут — вже строка, не Promise
             });
-          } catch (err) {
+          } catch {
             reject(thunkApi.rejectWithValue('Failed to get token'));
           }
         } else {
